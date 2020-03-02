@@ -1,0 +1,118 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: sans-serif;
+}
+
+.numberButtons{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+button{
+  width: 67px;
+  padding: 28px;
+  color: white;
+  background-color: black;
+  border: 0;
+  text-align: center;
+  transition: all .5s ease;
+}
+
+button:hover{
+  cursor: pointer;
+  width: 130px;
+  opacity: 0.8;
+  transition: all .5s ease;
+}
+
+button:focus{
+  outline: none;
+}
+
+@media only screen and (max-height: 800px){
+  .numberButtons{
+    position: relative;
+    flex-flow: row;
+  }
+  button{
+    height: 100vh;
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 700px){
+  .numberButtons{
+    margin-top: 25px;
+    position: relative;
+    flex-flow: column;
+  }
+  button{
+    width: 100%;
+    height: 71px;
+    margin-left: 0px;
+    border-top: 2px solid white;
+  }
+  button:hover{
+    width: 95%;
+  }
+}
+
+/*
+*       Volume Slider
+*/
+
+.volumeContainer{
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  position: fixed;
+}
+
+.volumeSlider{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: lightgray;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.volumeSlider:hover{
+  opacity: 1;
+}
+
+/* Chrome */
+.volumeSlider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: black;
+  border: 0;
+  border-radius: 0;
+  cursor: col-resize;
+}
+
+/* Firefox */
+.volumeSlider::-moz-range-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: black;
+  border: 0;
+  border-radius: 0;
+  cursor: col-resize;
+}
