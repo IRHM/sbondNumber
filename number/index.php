@@ -6,18 +6,6 @@
     <link rel="shortcut icon" href="https://ul.sbond.co/i/ico/hive.ico" />
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
     <link rel="stylesheet" href="styles.css">
-
-    <script type="text/javascript">
-      function play_sound(number){
-        var volumeSlider = document.getElementById("volumeSlider");
-        var audioElement = document.createElement('audio');
-        audioElement.setAttribute('src', 'https://p.sbond.co/number/aud/' + number + '.mp3');
-        audioElement.setAttribute('autoplay', 'autoplay');
-        audioElement.volume = volumeSlider.value / 100;
-        audioElement.load();
-        audioElement.play();
-      }
-    </script>
   </head>
   <body>
     <div class="volumeContainer">
@@ -31,5 +19,17 @@
         }
       ?>
     </div>
+		
+		<script type="text/javascript">
+		function play_sound(number){
+			let volumeSlider = document.getElementById("volumeSlider");
+			let audioElement = document.createElement('audio');
+			audioElement.setAttribute('src', 'aud/' + number + '.mp3');
+			audioElement.setAttribute('autoplay', 'autoplay');
+			audioElement.volume = volumeSlider.value / 100;
+			audioElement.load();
+			audioElement.play();
+		}
+		</script>
   </body>
 </html>
